@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -11,15 +11,13 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "lint": "tsdx lint --fix",
-    "prepare": "tsdx build"
+    "build": "tsc && ncc build",
+    "lint": "tsdx lint --fix"
   },
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint --fix"
     }
   },
   "prettier": {
@@ -28,8 +26,8 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "create-pull-request",
-  "author": "Yannick Wittwer",
+  "name": "github-actions-create-pull-request",
+  "author": "Interdiscount / Microspot",
   "module": "dist/create-pull-request.esm.js",
   "devDependencies": {
     "husky": "^4.2.5",
@@ -40,6 +38,8 @@
   "dependencies": {
     "@actions/core": "^1.2.5",
     "@octokit/core": "^3.1.2",
-    "@octokit/types": "^5.4.1"
+    "@octokit/plugin-rest-endpoint-methods": "^4.1.4",
+    "@octokit/types": "^5.4.1",
+    "@vercel/ncc": "^0.24.0"
   }
 }
