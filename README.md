@@ -30,7 +30,7 @@ Create a pull request and add a label in your workflow.
 ## Example usage
 
 ```
-uses: interdiscount/github-actions-create-pull-request@master
+uses: interdiscount/github-actions-create-pull-request@1.0.0
 with:
   github-token: ${{ secrets.GITHUB_TOKEN }}
   head-branch: "acceptance"
